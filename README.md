@@ -15,7 +15,7 @@ To set up the project, you need to install several libraries. Run the following 
 
 3. Install the required libraries:
     ```
-    sudo apt-get install -y libopenjp2-7-dev libhdf5-dev libqtgui4 libqtwebkit4 libqt4-test libatlas-base-dev libjasper-dev python3-pip python3-h5py python3-opencv
+    sudo apt-get install -y libopenjp2-7-dev libhdf5-dev libqtgui4 libqtwebkit4 libqt4-test libatlas-base-dev libjasper-dev python3-pip python3-h5py python3-opencv autoconf automake build-essential pkgconf libtool git libzip-dev libjpeg-dev gettext libmicrohttpd-dev libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev default-libmysqlclient-dev libpq-dev libsqlite3-dev libwebp-dev
     ```
 
 4. Install the Python dependencies:
