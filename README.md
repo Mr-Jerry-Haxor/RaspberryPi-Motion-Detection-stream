@@ -28,7 +28,7 @@ Open your browser and type the following URL:
 
 
 ```
-http://ip-address:5000
+http://ip-address:5000/camera
 ```
 
 
