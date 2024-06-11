@@ -1,0 +1,9 @@
+absl-py
+attrs
+mediapipe
+numpy
+opencv-contrib-python
+opencv-python
+protobuf
+six
+flask
