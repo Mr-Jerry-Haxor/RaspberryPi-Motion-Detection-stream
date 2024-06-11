@@ -5,7 +5,7 @@ To set up the project, you need to install several libraries. Run the following 
 
 1. Clone the repository:
     ```
-    git clone <repository_url>
+    git clone https://github.com/Mr-Jerry-Haxor/RaspberryPi-MachineLearning.git
     ```
 
 2. Navigate to the project directory:
