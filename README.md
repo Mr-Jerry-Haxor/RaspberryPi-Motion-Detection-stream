@@ -15,15 +15,7 @@ To set up the project, you need to install several libraries. Run the following 
 
 3. Install the required libraries:
     ```
-    sudo apt-get install -y libopenjp2-7-dev
-    sudo apt-get install -y libhdf5-dev
-    sudo apt-get install -y libqtgui4 libqtwebkit4 libqt4-test
-    sudo apt-get install -y libatlas-base-dev
-    sudo apt-get install -y libjasper-dev
-    sudo apt-get install -y python3-pip
-    sudo apt-get install -y python3-h5py
-    sudo apt-get install -y python3-opencv
-    sudo pip3 install flask
+    sudo apt-get install -y libopenjp2-7-dev libhdf5-dev libqtgui4 libqtwebkit4 libqt4-test libatlas-base-dev libjasper-dev python3-pip python3-h5py python3-opencv
     ```
 
 4. Install the Python dependencies:
