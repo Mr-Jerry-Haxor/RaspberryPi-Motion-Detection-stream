@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 from flask import Flask, render_template, Response, stream_with_context, request
 import mediapipe as mp
+import time
 
 video = cv2.VideoCapture(0)
 app = Flask('__name__')
@@ -24,6 +25,12 @@ def video_stream():
                                    mp_draw.DrawingSpec((255, 0, 0), 2, 2),
                                    mp_draw.DrawingSpec((255, 0, 255), 2, 2)
                                    )
+            # Calculate frame rate
+            new_frame_time = time.time()
+            frame_rate = 1 / (new_frame_time - prev_frame_time)
+            prev_frame_time = new_frame_time
+            # Display frame rate on the frame
+            cv2.putText(img, f'FPS: {frame_rate}', (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
             ret, buffer = cv2.imencode('.jpeg', img)
             frame = buffer.tobytes()
             yield (b' --frame\r\n' b'Content-type: image/jpeg\r\n\r\n' + frame + b'\r\n')
