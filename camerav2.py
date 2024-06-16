@@ -15,8 +15,8 @@ pose = mp_pose.Pose()
 
 # Global variables for threading
 frame_lock = threading.Lock()
-frame = None
 ret = False
+frame = None
 
 def capture_frames():
     global ret, frame
@@ -31,17 +31,17 @@ capture_thread = threading.Thread(target=capture_frames)
 capture_thread.start()
 
 def video_stream():
-    prev_frame_time = 0
+    prev_frame_time = time.time()
     while True:
         with frame_lock:
             if not ret or frame is None:
                 continue
             img = frame.copy()
-        
+
         # Perform pose detection
         results = pose.process(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-        
-        # Draw the detected pose on the original video/ live stream
+
+        # Draw the detected pose on the original video/live stream
         if results.pose_landmarks:
             mp_draw.draw_landmarks(img, results.pose_landmarks, mp_pose.POSE_CONNECTIONS,
                                    mp_draw.DrawingSpec((255, 0, 0), 2, 2),
