@@ -13,7 +13,7 @@ mp_draw = mp.solutions.drawing_utils
 pose = mp_pose.Pose()
 
 def video_stream():
-    prev_frame_time = 0
+    # prev_frame_time = 0
     while True:
         ret, img = video.read()
         if not ret:
@@ -27,11 +27,11 @@ def video_stream():
                                    mp_draw.DrawingSpec((255, 0, 255), 2, 2)
                                    )
             # Calculate frame rate
-            new_frame_time = time.time()
-            frame_rate = 1 / (new_frame_time - prev_frame_time)
-            prev_frame_time = new_frame_time
-            # Display frame rate on the frame
-            cv2.putText(img, f'FPS: {frame_rate}', (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            # new_frame_time = time.time()
+            # frame_rate = 1 / (new_frame_time - prev_frame_time)
+            # prev_frame_time = new_frame_time
+            # # Display frame rate on the frame
+            # cv2.putText(img, f'FPS: {frame_rate}', (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
             ret, buffer = cv2.imencode('.jpeg', img)
             frame = buffer.tobytes()
             yield (b' --frame\r\n' b'Content-type: image/jpeg\r\n\r\n' + frame + b'\r\n')

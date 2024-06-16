@@ -1,4 +1,3 @@
-
 # RaspberryPi-MachineLearning
 
 ## Essential Libraries to Install
@@ -42,8 +41,7 @@ To set up the project, you need to install several libraries. Run the following 
    ```
 
    ```
-   sudo apt-get install -y libopenjp2-7-dev libhdf5-dev libatlas-base-dev 
-    python3-pip python3-h5py python3-opencv autoconf automake build-essential pkgconf libtool git libzip-dev libjpeg-dev gettext libmicrohttpd-dev libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev default-libmysqlclient-dev libpq-dev libsqlite3-dev libwebp-dev
+   sudo apt-get install -y libopenjp2-7-dev libhdf5-dev libatlas-base-dev python3-pip python3-h5py python3-opencv autoconf automake build-essential pkgconf libtool git libzip-dev libjpeg-dev gettext libmicrohttpd-dev libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev default-libmysqlclient-dev libpq-dev libsqlite3-dev libwebp-dev
    ```
 4. Install the Python dependencies:
 
