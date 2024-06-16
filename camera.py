@@ -13,6 +13,7 @@ mp_draw = mp.solutions.drawing_utils
 pose = mp_pose.Pose()
 
 def video_stream():
+    prev_frame_time = 0
     while True:
         ret, img = video.read()
         if not ret:
