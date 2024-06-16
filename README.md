@@ -46,6 +46,12 @@ To set up the project, you need to install several libraries. Run the following 
 4. Install the Python dependencies:
 
    ```
+   pip install -r requirements.txt
+   ```
+
+   or
+
+   ```
    sudo pip3 install absl-py attrs mediapipe numpy opencv-contrib-python opencv-python protobuf six flask
    ```
 
