@@ -31,6 +31,7 @@ capture_thread = threading.Thread(target=capture_frames)
 capture_thread.start()
 
 def video_stream():
+    global ret, frame
     prev_frame_time = time.time()
     while True:
         with frame_lock:
