@@ -56,9 +56,7 @@ To set up the project, you need to install several libraries. Run the following 
 
 ## Accessing the Application
 
-Open your browser and type the following URL:
-
-reconnect the USB camera again and open 
+Reconnect the USB camera again and Open your browser and type the following URL:
 
 ```
 http://<raspberry_pi_ip-address>:8889/cam
