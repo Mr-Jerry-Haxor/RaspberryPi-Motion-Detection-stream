@@ -17,27 +17,14 @@ To set up the project, you need to install several libraries. Run the following 
 3. Install the required libraries:
 
    ```
-   sudo apt-get install libqt5gui5 libqt5webkit5 libqt5test5
+   sudo apt-get install -y libqt5gui5 libqt5webkit5 libqt5test5 software-properties-common python3-pip python3-dev nginx python3.11-venv ffmpeg
    ```
 
    ```
-   sudo apt-get install software-properties-common
-   ```
-
-   ```
-   sudo apt install python3-pip python3-dev nginx
-   ```
-
-   ```
-   sudo apt install python3.11-venv
-   ```
-
-   ```
-   python3 -m venv env
-   ```
-
-   ```
+   python3 -m venv env 
+   
    source env/bin/activate
+
    ```
 
    ```
@@ -59,15 +46,20 @@ To set up the project, you need to install several libraries. Run the following 
 
 
    ```
-   python camera.py
+   chmod +777 mediamtx
+
+   ./mediamtx > /dev/null 2>&1
+   
    ```
 
 ## Accessing the Application
 
 Open your browser and type the following URL:
 
+reconnect the USB camera again and open 
+
 ```
-http://ip-address:5000/camera
+http://<raspberry_pi_ip-address>:8889/cam
 ```
 
 ### Known Issues

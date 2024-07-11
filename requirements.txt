@@ -7,3 +7,5 @@ opencv-python
 protobuf
 six
 flask
+requests
+opencv-python-headless
