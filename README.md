@@ -22,7 +22,9 @@ To set up the project, you need to install several libraries. Run the following 
 
    ```
    python3 -m venv env 
-   
+   ```
+
+   ```
    source env/bin/activate
 
    ```
