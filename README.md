@@ -26,7 +26,6 @@ To set up the project, you need to install several libraries. Run the following 
 
    ```
    source env/bin/activate
-
    ```
 
    ```
@@ -49,9 +48,10 @@ To set up the project, you need to install several libraries. Run the following 
 
    ```
    chmod +777 mediamtx
+   ```
 
+   ```
    ./mediamtx > /dev/null 2>&1
-   
    ```
 
 ## Accessing the Application
