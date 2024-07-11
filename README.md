@@ -35,6 +35,9 @@ To set up the project, you need to install several libraries. Run the following 
 
    ```
    pip install -r requirements.txt
+
+   pip install Flask[async]
+
    ```
 
    or

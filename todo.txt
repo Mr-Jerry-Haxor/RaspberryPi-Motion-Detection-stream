@@ -1,0 +1,13 @@
+Motion capture system live stream camera Feed:
+
+without body pose
+
+with body pose
+
+stream native video  with RTSP , webRTC , Mjpeg
+
+high resolution stream or low resolution stream
+
+
+
+

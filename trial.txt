@@ -1,0 +1,91 @@
+sudo apt-get install ffmpeg
+
+
+
+sudo apt-get dist-upgrade
+
+
+sudo apt-get install libraspberrypi-dev
+
+
+sudo apt-get install libffi-dev libatlas-base-dev
+
+
+sudo apt install libcamera-apps libcamera0
+
+sudo apt install -y python3-pyqt5 python3-opengl
+
+
+pip install picamera2
+
+
+sudo apt install -y python3-picamera2 --no-install-recommends
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://gektor650.medium.com/comparing-video-stream-latencies-raspberry-pi-5-camera-v3-a8d5dad2f67b
+
+
+mkdir mediamtx && cd mediamtx
+
+wget https://github.com/bluenviron/mediamtx/releases/download/v1.8.4/mediamtx_v1.8.4_linux_arm64v8.tar.gz
+
+tar -xvzf mediamtx_v1.8.4_linux_arm64v8.tar.gz
+
+
+sudo apt-get install ffmpeg
+
+
+
+nano mediamtx.yml
+
+
+##scroll down and paste these configurations.
+
+
+
+
+paths:
+  cam:
+    runOnInit: bash -c 'ffmpeg -f v4l2 -i /dev/video0 -pix_fmt yuv420p -c:v libx264 -preset ultrafast -b:v 600k -f rtsp rtsp://localhost:$RTSP_PORT/$MTX_PATH'
+    runOnInitRestart: yes
+  cam1:
+    runOnInit: bash -c 'ffmpeg -f v4l2 -video_size 1280x720 -framerate 30 -input_format mjpeg -i /dev/video0 -c:v libx264 -preset ultrafast -tune zerolatency -f rtsp rtsp://localhost:$RTSP_PORT/$MTX_PATH'
+    runOnInitRestart: yes
+
+
+  latency : 250ms
+
+  cam:
+    runOnInit: bash -c 'ffmpeg -f v4l2 -video_size 1280x720 -framerate 30 -input_format mjpeg -i /dev/video0 -c:v libx264 -preset ultrafast -tune zerolatency -b:v 600k -pix_fmt yuv420p -f rtsp rtsp://localhost:$RTSP_PORT/$MTX_PATH'
+    runOnInitRestart: yes
+
+kaanlabs blog
+
+  cam:
+    runOnInit: bash -c 'ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -hwaccel_output_format vaapi -f v4l2 -input_format yuyv422 -video_size 1920x1080 -framerate 30 -use_wallclock_as_timestamps 1 -fflags +genpts -i /dev/video0 -an -vf 'format=nv12|vaapi,hwupload' -vcodec h264_vaapi -bf 0 -f rtsp rtsp://localhost:$RTSP_PORT/$MTX_PATH'
+    runOnInitRestart: yes
+
+webRTC
+
+http://<raspberry_ip>:8889/cam
+
+
+
+pip install flask opencv-python-headless aiortc requests mediapipe
+
+
+
+
+https://kaanlabs.com/low-latency-webcam-to-browser-streaming-with-rtsp-webrtc/
