@@ -693,9 +693,6 @@ paths:
   cam:
     runOnInit: bash -c 'libcamera-vid -t 0 --codec yuv420 --width 1920 --height 1080 --inline --listen -o - | ffmpeg -f rawvideo -pix_fmt yuv420p -s:v 640x480 -i /dev/stdin -c:v libx264 -preset ultrafast -tune zerolatency -f rtsp rtsp://localhost:$RTSP_PORT/$MTX_PATH'
     runOnInitRestart: yes
-  cam1:
-    runOnInit: bash -c 'ffmpeg -f v4l2 -video_size 640x480  -framerate 30 -input_format mjpeg -i /dev/video0 -c:v libx264 -preset ultrafast -tune zerolatency -crf 28 -f rtsp rtsp://localhost:$RTSP_PORT/$MTX_PATH'
-    runOnInitRestart: yes
   # example:
   # my_camera:
   #   source: rtsp://my_camera
