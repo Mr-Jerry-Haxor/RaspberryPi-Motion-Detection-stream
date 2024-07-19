@@ -691,7 +691,7 @@ pathDefaults:
 # for example "~^prefix" will match all paths that start with "prefix".
 paths:
   cam:
-    runOnInit: bash -c 'ffmpeg -f v4l2 -video_size 1280x720 -framerate 30 -input_format mjpeg -i /dev/video0 -c:v libx264 -preset ultrafast -tune zerolatency -b:v 600k -pix_fmt yuv420p -f rtsp rtsp://localhost:$RTSP_PORT/$MTX_PATH'
+    runOnInit: bash -c 'ffmpeg -f v4l2 -video_size 640x480  -framerate 30 -input_format mjpeg -i /dev/video0 -c:v libx264 -preset ultrafast -tune zerolatency -crf 28 -f rtsp rtsp://localhost:$RTSP_PORT/$MTX_PATH'
     runOnInitRestart: yes
   # example:
   # my_camera:

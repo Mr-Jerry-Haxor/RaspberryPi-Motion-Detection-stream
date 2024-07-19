@@ -17,30 +17,25 @@ To set up the project, you need to install several libraries. Run the following 
 3. Install the required libraries:
 
    ```
-   sudo apt-get install -y libqt5gui5 libqt5webkit5 libqt5test5 software-properties-common python3-pip python3-dev nginx python3.11-venv ffmpeg
+   sudo apt-get install -y libqt5gui5 libqt5webkit5 libqt5test5 software-properties-common ffmpeg
    ```
 
-   ```
-   python3 -m venv env 
-   ```
-
-   ```
-   source env/bin/activate
-   ```
 
    ```
    sudo apt-get install -y libopenjp2-7-dev libhdf5-dev libatlas-base-dev python3-pip python3-h5py python3-opencv autoconf automake build-essential pkgconf libtool git libzip-dev libjpeg-dev gettext libmicrohttpd-dev libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev default-libmysqlclient-dev libpq-dev libsqlite3-dev libwebp-dev
    ```
-4. Install the Python dependencies:
+4. change the config,
 
    ```
-   pip install -r requirements.txt
+   sudo nano /boot/firmware/cmdline.txt
    ```
-
-   or
-
+   append below line in same line to the cmdline.txt file,(dont append in next line)
    ```
-   sudo pip3 install absl-py attrs mediapipe numpy opencv-contrib-python opencv-python protobuf six flask
+   dwc_otg.fiq_enable=1 dwc_otg.fiq_fsm_enable=1 dwc_otg.fiq_fsm_mask=0x3
+   ```
+   removing the other processes of using camera
+   ```
+   sudo kill $(sudo lsof -t /dev/video0)
    ```
 
    ## Run the application
@@ -49,6 +44,7 @@ To set up the project, you need to install several libraries. Run the following 
    ```
    chmod +777 mediamtx
    ```
+
 
    ```
    ./mediamtx > /dev/null 2>&1
