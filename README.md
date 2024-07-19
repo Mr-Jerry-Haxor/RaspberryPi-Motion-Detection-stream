@@ -31,7 +31,7 @@ To set up the project, you need to install several libraries. Run the following 
    ```
    append below line in same line to the cmdline.txt file,(dont append in next line)
    ```
-   dwc_otg.fiq_enable=1 dwc_otg.fiq_fsm_enable=1 dwc_otg.fiq_fsm_mask=0x3
+    dwc_otg.fiq_enable=1 dwc_otg.fiq_fsm_enable=1 dwc_otg.fiq_fsm_mask=0x3
    ```
    removing the other processes of using camera
    ```
