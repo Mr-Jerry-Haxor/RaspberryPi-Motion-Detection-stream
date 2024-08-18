@@ -1,4 +1,5 @@
-# RaspberryPi-MachineLearning
+# RaspberryPi-Motion-Detection-stream
+
 
 ## Essential Libraries to Install
 
