@@ -56,31 +56,24 @@ To set up the project, you need to install several libraries. Run the following 
 
  Open your browser and type the following URL:
 
+**For normal camera stream**
+
 ```
 http://<raspberry_pi_ip-address>:8889/stream/?streamtype=camera
 ```
+
+**For Motion detection camera stream**
 
 ```
 http://<raspberry_pi_ip-address>:8889/stream/?streamtype=motiondetection
 ```
 
+**For Both Normal and motion detection camera stream**
+
 ```
 http://<raspberry_pi_ip-address>:8889/stream/?streamtype=both
 ```
 
-***or***
-
-```
-http://<raspberry_pi_ip-address>:8889/stream1/?streamtype=camera
-```
-
-```
-http://<raspberry_pi_ip-address>:8889/stream1/?streamtype=motiondetection
-```
-
-```
-http://<raspberry_pi_ip-address>:8889/stream1/?streamtype=both
-```
 
 
 ### Known Issues
