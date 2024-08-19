@@ -690,8 +690,11 @@ pathDefaults:
 # for example "~^(test1|test2)$" will match both "test1" and "test2",
 # for example "~^prefix" will match all paths that start with "prefix".
 paths:
-  cam:
+  stream:
     runOnInit: bash -c 'libcamera-vid -t 0 --codec yuv420 --width 1920 --height 1080 --inline --listen -o - | ffmpeg -f rawvideo -pix_fmt yuv420p -s:v 640x480 -i /dev/stdin -c:v libx264 -preset ultrafast -tune zerolatency -f rtsp rtsp://localhost:$RTSP_PORT/$MTX_PATH'
+    runOnInitRestart: yes
+  stream1:
+    runOnInit: bash -c 'ffmpeg -f v4l2 -video_size 640x480  -framerate 30 -input_format mjpeg -i /dev/video0 -c:v libx264 -preset ultrafast -tune zerolatency -crf 28 -f rtsp rtsp://localhost:$RTSP_PORT/$MTX_PATH'
     runOnInitRestart: yes
   # example:
   # my_camera:
