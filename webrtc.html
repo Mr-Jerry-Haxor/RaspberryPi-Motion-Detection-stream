@@ -114,7 +114,7 @@
 	}
 
     .container {
-		margin: 5%;
+		margin: 5% 0%;
         width: 100%;
         height: 100%;
         display: flex;
@@ -213,7 +213,7 @@
 </style>
 </head>
 <body>
-	<div class="wrapper">
+	<div class="wrapper" style="display:none;">
 		<h2>Camera Stream</h2>
 		<h6>Click on tabs to see them in action</h6>
 		<nav class="tabs">
@@ -248,49 +248,54 @@
 <script>
 
 
-$(document).ready(function() {
-var tabs = $('.tabs');
-var activeItem = tabs.find('.active');
-var activeWidth = activeItem.innerWidth();
-$(".selector").css({
-	"left": activeItem.position().left + "px",
-	"width": activeWidth + "px"
-});
+//$(document).ready(function() {
+//var tabs = $('.tabs');
+//var activeItem = tabs.find('.active');
+//var activeWidth = activeItem.innerWidth();
+//$(".selector").css({
+//	"left": activeItem.position().left + "px",
+//	"width": activeWidth + "px"
+//});
 
-$(".tabs").on("click", "a", function(e) {
-	e.preventDefault();
-	$('.tabs a').removeClass("active");
-	$(this).addClass('active');
-	var activeWidth = $(this).innerWidth();
-	var itemPos = $(this).position();
-	$(".selector").css({
-	"left": itemPos.left + "px",
-	"width": activeWidth + "px"
-	});
-	var switchNumber = $(this).data('switch');
-	switchVideos(switchNumber);
-});
+//$(".tabs").on("click", "a", function(e) {
+//	e.preventDefault();
+//	$('.tabs a').removeClass("active");
+//	$(this).addClass('active');
+//	var activeWidth = $(this).innerWidth();
+//	var itemPos = $(this).position();
+//	$(".selector").css({
+//	"left": itemPos.left + "px",
+//	"width": activeWidth + "px"
+//	});
+//	var switchNumber = $(this).data('switch');
+//	switchVideos(switchNumber);
+//});
 
-function switchVideos(switchNumber) {
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const streamtype =  urlParams.get('streamtype')
+
+
+function switchVideos() {
 	const mainVideo = document.getElementById('mainvideo');
 	const motionVideo = document.getElementById('motionvideo');
 
 	mainVideo.style.display = 'none';
 	motionVideo.style.display = 'none';
 
-	if (switchNumber === 1) {
+	if (streamtype === 'camera') {
 	mainVideo.style.display = 'block';
-	} else if (switchNumber === 2) {
+	} else if (streamtype === 'motiondetection') {
 	motionVideo.style.display = 'block';
-	} else if (switchNumber === 3) {
+	} else if (streamtype === 'both') {
 	mainVideo.style.display = 'block';
 	motionVideo.style.display = 'block';
 	}
 }
 
 // Initialize with main video displayed
-switchVideos(1);
-});
+switchVideos();
+
 
 const retryPause = 2000;
 
